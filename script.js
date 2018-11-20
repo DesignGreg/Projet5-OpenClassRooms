@@ -62,6 +62,14 @@ function generator (array1, array2, array3) {
     var random2 = array2[Math.floor(Math.random() * array2.length)];
     var random3 = array3[Math.floor(Math.random() * array3.length)];
     
+    var tagReponse = document.createElement("p");
+    var reponse = document.createTextNode(random1 + " " + random2 + " " + random3);
+    tagReponse.appendChild(reponse);
+    
+    var resultats = document.getElementById("resultats");
+    resultats.appendChild(tagReponse);
+    
+    // Console
     console.log(random1 + " " + random2 + " " + random3);
 }
 
