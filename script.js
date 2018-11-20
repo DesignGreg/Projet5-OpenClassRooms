@@ -26,14 +26,6 @@ const secondFanArrayF = ["une marchande", "une guerrière", "une barbare", "une 
 // Tableau 3 - Fantasy
 const thirdFanArray = ["d'Hyrule", "de Cimmérie", "des Terres du Milieu", "de Poudlard", "du Pandémonium", "de l'Autre Monde"];
 
-
-/* Générateur View */
-/*-----------------*/
-
-
-
-
-
 /* Générateur Controller */
 /*-----------------------*/
 
@@ -56,21 +48,16 @@ function init() {
 window.onload = init;
 
 // Génération d'une phrase - Fonction
-
 function generator (array1, array2, array3) {
-    var random1 = array1[Math.floor(Math.random() * array1.length)];
-    var random2 = array2[Math.floor(Math.random() * array2.length)];
-    var random3 = array3[Math.floor(Math.random() * array3.length)];
+    let random1 = array1[Math.floor(Math.random() * array1.length)];
+    let random2 = array2[Math.floor(Math.random() * array2.length)];
+    let random3 = array3[Math.floor(Math.random() * array3.length)];
     
-    var tagReponse = document.createElement("p");
-    var reponse = document.createTextNode(random1 + " " + random2 + " " + random3);
-    tagReponse.appendChild(reponse);
-    
-    var resultats = document.getElementById("resultats");
-    resultats.appendChild(tagReponse);
-    
-    // Console
-    console.log(random1 + " " + random2 + " " + random3);
+    return {
+        random1: random1,
+        random2: random2,
+        random3: random3
+    };
 }
 
 // Génération de la phrase SF
@@ -93,4 +80,26 @@ generator(firstFanArray, secondFanArray, thirdFanArray);
 // Féminin
 function fantasyF() {
 generator(firstFanArrayF, secondFanArrayF, thirdFanArray);
+}
+
+/* Générateur View */
+/*-----------------*/
+
+function viewGenerator() {
+    
+    var textGenerator = generator();
+    let random1 = textGenerator.random1;
+    let random2 = textGenerator.random2;
+    let random3 = textGenerator.random3;
+    
+    let tagReponse = document.createElement("p");
+    let reponse = document.createTextNode(random1 + " " + random2 + " " + random3);
+    tagReponse.appendChild(reponse);
+    
+    let resultats = document.getElementById("resultats");
+    resultats.appendChild(tagReponse);
+    
+    // Console
+    console.log(random1 + " " + random2 + " " + random3);
+    
 }
