@@ -1,9 +1,16 @@
-@media screen and (max-device-width: 800px) {
+@media screen and (max-width: 800px) {
     .video__background {
         display: none;
     }
     body {
         background-image: url(Videos/Space.jpg);
+    }
+}
+
+@media screen and (max-width: 1366px) {
+    .main {
+        flex-direction: column;
+        flex-wrap: wrap;
     }
 }
 
@@ -20,10 +27,11 @@
 
 .main {
     display: flex;
+    flex-wrap: wrap;
     width: 50%;
     position: relative;
     margin: 0 auto;
-    margin-top: 40vh;
+    margin-top: 50vh;
     transform: translateY(-90%);
 }
 
@@ -45,6 +53,7 @@
 .button {
     background-color: black;
     border: none;
+    border-radius: 10px;
     color: white;
     text-align: center;
     text-decoration: none;

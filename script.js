@@ -43,9 +43,40 @@ function init() {
     document.getElementById('B4').onclick=function() {   
         fantasyF();
     };
-    
 }
 window.onload = init;
+
+
+// Gestion du nombre de citations générées
+let liste = document.getElementById('select');
+let choix = liste.options[liste.selectedIndex].value;
+
+function write() {
+   console.log(choix); 
+}
+    
+    // Génération de la phrase SF
+    // Masculin
+    function sciFi() {
+    generator(firstSFArray, secondSFArray, thirdSFArray);
+    }
+
+    // Féminin
+    function sciFiF() {
+    generator(firstSFArrayF, secondSFArrayF, thirdSFArray);
+    }
+
+    // Génération de la phrase fantastique
+    // Masculin
+    function fantasy() {
+    generator(firstFanArray, secondFanArray, thirdFanArray);
+    }
+
+    // Féminin
+    function fantasyF() {
+    generator(firstFanArrayF, secondFanArrayF, thirdFanArray);
+    }
+
 
 // Génération d'une phrase - Fonction
 function generator (array1, array2, array3) {
@@ -53,44 +84,11 @@ function generator (array1, array2, array3) {
     let random2 = array2[Math.floor(Math.random() * array2.length)];
     let random3 = array3[Math.floor(Math.random() * array3.length)];
     
-    return {
-        random1: random1,
-        random2: random2,
-        random3: random3
-    };
-}
-
-// Génération de la phrase SF
-// Masculin
-function sciFi() {
-generator(firstSFArray, secondSFArray, thirdSFArray);
-}
-
-// Féminin
-function sciFiF() {
-generator(firstSFArrayF, secondSFArrayF, thirdSFArray);
-}
-
-// Génération de la phrase fantastique
-// Masculin
-function fantasy() {
-generator(firstFanArray, secondFanArray, thirdFanArray);
-}
-
-// Féminin
-function fantasyF() {
-generator(firstFanArrayF, secondFanArrayF, thirdFanArray);
-}
-
-/* Générateur View */
-/*-----------------*/
-
-function viewGenerator() {
-    
-    var textGenerator = generator();
-    let random1 = textGenerator.random1;
-    let random2 = textGenerator.random2;
-    let random3 = textGenerator.random3;
+//    return {
+//        random1: random1,
+//        random2: random2,
+//        random3: random3
+//    };
     
     let tagReponse = document.createElement("p");
     let reponse = document.createTextNode(random1 + " " + random2 + " " + random3);
@@ -101,5 +99,26 @@ function viewGenerator() {
     
     // Console
     console.log(random1 + " " + random2 + " " + random3);
-    
 }
+
+/* Générateur View */
+/*-----------------*/
+
+//function viewGenerator() {
+//    
+//    let textGenerator = generator();
+//    let random1 = textGenerator.random1;
+//    let random2 = textGenerator.random2;
+//    let random3 = textGenerator.random3;
+//    
+//    let tagReponse = document.createElement("p");
+//    let reponse = document.createTextNode(random1 + " " + random2 + " " + random3);
+//    tagReponse.appendChild(reponse);
+//    
+//    let resultats = document.getElementById("resultats");
+//    resultats.appendChild(tagReponse);
+//    
+//    // Console
+//    console.log(random1 + " " + random2 + " " + random3);
+//    
+//}
