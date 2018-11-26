@@ -48,77 +48,65 @@ window.onload = init;
 
 
 // Gestion du nombre de citations générées
-let liste = document.getElementById('select');
-let choix = liste.options[liste.selectedIndex].value;
-
-function write() {
-   console.log(choix); 
-}
+const liste = document.getElementById('select');
+const choix = liste.options[liste.selectedIndex].value;
     
     // Génération de la phrase SF
     // Masculin
     function sciFi() {
-    generator(firstSFArray, secondSFArray, thirdSFArray);
+        generator(firstSFArray, secondSFArray, thirdSFArray);
+        displayQuote();
     }
 
     // Féminin
     function sciFiF() {
-    generator(firstSFArrayF, secondSFArrayF, thirdSFArray);
+        generator(firstSFArrayF, secondSFArrayF, thirdSFArray);
+        displayQuote();
     }
 
     // Génération de la phrase fantastique
     // Masculin
     function fantasy() {
-    generator(firstFanArray, secondFanArray, thirdFanArray);
+        generator(firstFanArray, secondFanArray, thirdFanArray);
+        displayQuote();
     }
 
     // Féminin
     function fantasyF() {
-    generator(firstFanArrayF, secondFanArrayF, thirdFanArray);
+        generator(firstFanArrayF, secondFanArrayF, thirdFanArray);
+        displayQuote();
     }
 
 
 // Génération d'une phrase - Fonction
+var result = "";
+
 function generator (array1, array2, array3) {
-    let random1 = array1[Math.floor(Math.random() * array1.length)];
-    let random2 = array2[Math.floor(Math.random() * array2.length)];
-    let random3 = array3[Math.floor(Math.random() * array3.length)];
+    const random1 = array1[Math.floor(Math.random() * array1.length)];
+    const random2 = array2[Math.floor(Math.random() * array2.length)];
+    const random3 = array3[Math.floor(Math.random() * array3.length)];
     
-//    return {
-//        random1: random1,
-//        random2: random2,
-//        random3: random3
-//    };
-    
-    let tagReponse = document.createElement("p");
-    let reponse = document.createTextNode(random1 + " " + random2 + " " + random3);
-    tagReponse.appendChild(reponse);
-    
-    let resultats = document.getElementById("resultats");
-    resultats.appendChild(tagReponse);
-    
-    // Console
-    console.log(random1 + " " + random2 + " " + random3);
+    result = random1 + " " + random2 + " " + random3;
 }
+
+
 
 /* Générateur View */
 /*-----------------*/
 
-//function viewGenerator() {
-//    
-//    let textGenerator = generator();
-//    let random1 = textGenerator.random1;
-//    let random2 = textGenerator.random2;
-//    let random3 = textGenerator.random3;
-//    
-//    let tagReponse = document.createElement("p");
-//    let reponse = document.createTextNode(random1 + " " + random2 + " " + random3);
-//    tagReponse.appendChild(reponse);
-//    
-//    let resultats = document.getElementById("resultats");
-//    resultats.appendChild(tagReponse);
-//    
-//    // Console
-//    console.log(random1 + " " + random2 + " " + random3);
-//    
-//}
+// Affichage des résultats
+function displayQuote() {
+    
+    let quote = result;
+    
+    const tagReponse = document.createElement("p");
+    const reponse = document.createTextNode(quote);
+    tagReponse.appendChild(reponse);
+    
+    const resultats = document.getElementById("resultats");
+    resultats.appendChild(tagReponse);
+    
+    // Console
+    console.log(quote);
+    
+}
