@@ -48,38 +48,80 @@ window.onload = init;
 
 
 // Gestion du nombre de citations générées
-const liste = document.getElementById('select');
-const choix = liste.options[liste.selectedIndex].value;
+let value = 1;
+
+
+function change() {
+    const liste = document.getElementById('select');
+    const choix = liste.options[liste.selectedIndex].value;
+    
+    value = choix;
+}
+
+
     
     // Génération de la phrase SF
     // Masculin
-    function sciFi() {
-        generator(firstSFArray, secondSFArray, thirdSFArray);
-        displayQuote();
-    }
 
-    // Féminin
-    function sciFiF() {
-        generator(firstSFArrayF, secondSFArrayF, thirdSFArray);
-        displayQuote();
+function sciFi() {
+    
+    if (value > 1) {
+        for(let x = 1; x <= value; x++) {
+            generator(firstSFArray, secondSFArray, thirdSFArray);
+            displayQuote();
+        }
+    } else {
+            generator(firstSFArray, secondSFArray, thirdSFArray);
+            displayQuote();
     }
+}
 
-    // Génération de la phrase fantastique
-    // Masculin
-    function fantasy() {
-        generator(firstFanArray, secondFanArray, thirdFanArray);
-        displayQuote();
-    }
+// Féminin
+function sciFiF() {
+    
+    if (value > 1) {
+        for(let x = 1; x <= value; x++) {
+            generator(firstSFArrayF, secondSFArrayF, thirdSFArray);
+            displayQuote();
+        }
+    } else {
+            generator(firstSFArrayF, secondSFArrayF, thirdSFArray);
+            displayQuote();
+    }  
+}
 
-    // Féminin
-    function fantasyF() {
-        generator(firstFanArrayF, secondFanArrayF, thirdFanArray);
-        displayQuote();
-    }
+// Génération de la phrase fantastique
+// Masculin
+function fantasy() {
+    
+    if (value > 1) {
+        for(let x = 1; x <= value; x++) {
+            generator(firstFanArray, secondFanArray, thirdFanArray);
+            displayQuote();
+        }
+    } else {
+            generator(firstFanArray, secondFanArray, thirdFanArray);
+            displayQuote();
+    } 
+}
+
+// Féminin
+function fantasyF() {
+    
+    if (value > 1) {
+        for(let x = 1; x <= value; x++) {
+            generator(firstFanArrayF, secondFanArrayF, thirdFanArray);
+            displayQuote();
+        }
+    } else {
+            generator(firstFanArrayF, secondFanArrayF, thirdFanArray);
+            displayQuote();
+    } 
+}
 
 
 // Génération d'une phrase - Fonction
-var result = "";
+let result = "";
 
 function generator (array1, array2, array3) {
     const random1 = array1[Math.floor(Math.random() * array1.length)];
@@ -97,7 +139,7 @@ function generator (array1, array2, array3) {
 // Affichage des résultats
 function displayQuote() {
     
-    let quote = result;
+    const quote = result;
     
     const tagReponse = document.createElement("p");
     const reponse = document.createTextNode(quote);
