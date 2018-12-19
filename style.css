@@ -11,6 +11,7 @@
     .main {
         flex-direction: column;
         flex-wrap: wrap;
+        margin-top: 5vh !important;
     }
 }
 
@@ -31,8 +32,8 @@
     width: 50%;
     position: relative;
     margin: 0 auto;
-    margin-top: 50vh;
-    transform: translateY(-90%);
+    margin-top: 35vh;
+/*    transform: translateY(30%);*/
 }
 
 .main__titre, .main__choix, .main__resultats {
@@ -66,7 +67,7 @@
 }
 
 .main__resultats {
-    margin-top: -70px;
+    margin-top: 50px;
     color: white;
     text-shadow: 2px 2px 2px purple;
     font-size: 20px;

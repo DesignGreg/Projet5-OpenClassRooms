@@ -1,55 +1,3 @@
-/* VIEW */
-
-let initView = new Vue({
-    el: '#first_article',
-    data: {
-        titre_categories_SF: 'Personnages de Science-Fiction',
-        nom_bouton_B1: 'Inspiration Sci-Fi masculin',
-        nom_bouton_B2: 'Inspiration Sci-Fi féminine',
-        titre_categorie_Fan: 'Personnages de Fantasy',
-        nom_bouton_B3: 'Inspiration Fantastique masculin',
-        nom_bouton_B4: 'Inspiration Fantastique féminine'
-    }
-});
-
-let renderedView = new Vue({
-
-});
-
-
-// Affichage des résultats
-
-let displayQuote = new Vue({
-    el: '#second_article',
-    data: {
-        message: '',
-    },
-    methods: {
-        displayResult: function () {
-            const quote = result;
-            const reponse = document.createTextNode(quote);
-        }
-    }
-});
-
-
-
-function displayQuote() {
-
-    const quote = result;
-
-    const tagReponse = document.createElement("p");
-    const reponse = document.createTextNode(quote);
-    tagReponse.appendChild(reponse);
-
-    const resultats = document.getElementById("resultats");
-    resultats.appendChild(tagReponse);
-
-    // Console
-    console.log(quote);
-}
-
-
 /* MODEL */
 
 // Tableau 1 - SF
@@ -75,14 +23,83 @@ const secondFanArrayF = ["une marchande", "une guerrière", "une barbare", "une 
 const thirdFanArray = ["d'Hyrule", "de Cimmérie", "des Terres du Milieu", "de Poudlard", "du Pandémonium", "de l'Autre Monde"];
 
 
+/* VIEW */
+
+new Vue({
+    el: '#app',
+    data: {
+        titre_categories_SF: 'Personnages de Science-Fiction',
+        nom_bouton_B1: 'Inspiration Sci-Fi masculin',
+        nom_bouton_B2: 'Inspiration Sci-Fi féminine',
+        titre_categorie_Fan: 'Personnages de Fantasy',
+        nom_bouton_B3: 'Inspiration Fantastique masculin',
+        nom_bouton_B4: 'Inspiration Fantastique féminine'
+    }
+
+});
+
+
+//let initView = new Vue({
+//    el: '#first_article',
+//    data: {
+//        titre_categories_SF: 'Personnages de Science-Fiction',
+//        nom_bouton_B1: 'Inspiration Sci-Fi masculin',
+//        nom_bouton_B2: 'Inspiration Sci-Fi féminine',
+//        titre_categorie_Fan: 'Personnages de Fantasy',
+//        nom_bouton_B3: 'Inspiration Fantastique masculin',
+//        nom_bouton_B4: 'Inspiration Fantastique féminine'
+//    }
+//});
+
+//let renderedView = new Vue({
+//
+//});
+
+
+// Affichage des résultats
+
+//let displayQuote = new Vue({
+//    el: '#second_article',
+//    data: {
+//        message: '',
+//    },
+//    methods: {
+//        displayResult: function () {
+//            const quote = result;
+//            const reponse = document.createTextNode(quote);
+//        }
+//    }
+//});
+
+
+
+function displayQuote() {
+
+    const quote = result;
+
+    const tagReponse = document.createElement("p");
+    const reponse = document.createTextNode(quote);
+    tagReponse.appendChild(reponse);
+
+    const resultats = document.getElementById("resultats");
+    resultats.appendChild(tagReponse);
+
+    // Console
+    console.log(quote);
+}
+
+
+
+
+
 
 /* CONTROLLER */
 
 // Event Handlers
-let initButton = new Vue({
-    el: '#first_article',
-    data: {
-        message: '',
+
+Vue.component('initButton', {
+    data: function () {
+
     },
     methods: {
         eventButton: function () {
@@ -106,6 +123,33 @@ let initButton = new Vue({
 });
 
 
+//let initButton = new Vue({
+//    el: '#app',
+//    data: {
+//        message: '',
+//    },
+//    methods: {
+//        eventButton: function () {
+//            document.getElementById('B1').onclick = function () {
+//                sciFi();
+//            };
+//            document.getElementById('B2').onclick = function () {
+//                sciFiF();
+//            };
+//            document.getElementById('B3').onclick = function () {
+//                fantasy();
+//            };
+//            document.getElementById('B4').onclick = function () {
+//                fantasyF();
+//            };
+//        }
+//    },
+//    mounted() {
+//        this.eventButton();
+//    }
+//});
+
+
 // Gestion du nombre de citations générées
 let value = 1;
 
@@ -121,7 +165,7 @@ function change() {
 // Génération de la phrase SF
 // Masculin
 let createQuote = new Vue({
-    el: '#first_article',
+    el: '#app',
     data: {
         message: '',
     },
@@ -177,7 +221,7 @@ let createQuote = new Vue({
 let result = "";
 
 let generator = new Vue({
-    el: '#first_article',
+    el: '#app',
     data: {
         message: '',
     },
