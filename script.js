@@ -1,5 +1,5 @@
 /* Générateur de citations pour personnages de jeux de rôles, univers science-fiction ou fantastique. */
-
+    
 
 /* Générateur Model */
 /*------------------*/
@@ -31,16 +31,16 @@ const thirdFanArray = ["d'Hyrule", "de Cimmérie", "des Terres du Milieu", "de P
 
 // Init Event Handler pour les Boutons
 function init() {
-    document.getElementById('B1').onclick = function () {
+    document.getElementById('B1').onclick = function() {
         sciFi();
     };
-    document.getElementById('B2').onclick = function () {
+    document.getElementById('B2').onclick = function() {
         sciFiF();
     };
-    document.getElementById('B3').onclick = function () {
+    document.getElementById('B3').onclick = function() {
         fantasy();
     };
-    document.getElementById('B4').onclick = function () {
+    document.getElementById('B4').onclick = function() {
         fantasyF();
     };
 }
@@ -147,7 +147,4 @@ function displayQuote() {
 
     const resultats = document.getElementById("resultats");
     resultats.appendChild(tagReponse);
-
-    // Console
-    console.log(quote);
 }
