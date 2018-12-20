@@ -4,7 +4,7 @@ const secondSFArray = ["un pilote", "un aventurier", "un explorateur", "un agent
 const thirdSFArray = ["de Vénus", "de Mars", "d'Alpha Centauri", "des tréfonds de la Galaxie", "du Néant"];
 
 // Génération de la citation
-let result = "";
+let result;
 function generator(array1, array2, array3) {
     const random1 = array1[Math.floor(Math.random() * array1.length)];
     const random2 = array2[Math.floor(Math.random() * array2.length)];
