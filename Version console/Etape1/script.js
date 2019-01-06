@@ -14,10 +14,9 @@ function generator(array1, array2, array3) {
 }
 
 // Question à l'utilisateur
-let question;
 
 while (true) {
-    question = prompt("Une nouvelle citation O/N ?").toLowerCase();
+    const question = prompt("Une nouvelle citation O/N ?").toLowerCase();
     
     if (question === 'o') {
         generator(firstSFArray, secondSFArray, thirdSFArray);

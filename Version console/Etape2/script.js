@@ -19,18 +19,15 @@ function generator(array1, array2, array3) {
 }
 
 // Question à l'utilisateur
-let firstQuestion;
 
 while (true) {
-    firstQuestion = prompt("Une nouvelle citation O/N ?").toLowerCase();
-    let secondQuestion;
+    const firstQuestion = prompt("Une nouvelle citation O/N ?").toLowerCase();
 
     if (firstQuestion === 'o') {
-        secondQuestion = parseFloat(prompt('Combien de citations souhaitez-vous (1 à 5) ?', "1"));
-        let thirdQuestion;
+        const secondQuestion = parseFloat(prompt('Combien de citations souhaitez-vous (1 à 5) ?', "1"));
 
         if (secondQuestion <= 5) {
-            thirdQuestion = prompt("Univers Science-Fiction (S) ou Fantastique (F) ?").toLowerCase();
+            const thirdQuestion = prompt("Univers Science-Fiction (S) ou Fantastique (F) ?").toLowerCase();
 
             if (thirdQuestion === 'science-fiction' || thirdQuestion === 's') {
 
