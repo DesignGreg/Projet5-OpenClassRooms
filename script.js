@@ -59,6 +59,16 @@ function change() {
 }
 
 
+// Génération d'une phrase - Fonction
+let result = "";
+
+function generator(array1, array2, array3) {
+    const random1 = array1[Math.floor(Math.random() * array1.length)];
+    const random2 = array2[Math.floor(Math.random() * array2.length)];
+    const random3 = array3[Math.floor(Math.random() * array3.length)];
+
+    result = random1 + " " + random2 + " " + random3;
+}
 
 // Génération de la phrase SF
 // Masculin
@@ -118,19 +128,6 @@ function fantasyF() {
         displayQuote();
     }
 }
-
-
-// Génération d'une phrase - Fonction
-let result = "";
-
-function generator(array1, array2, array3) {
-    const random1 = array1[Math.floor(Math.random() * array1.length)];
-    const random2 = array2[Math.floor(Math.random() * array2.length)];
-    const random3 = array3[Math.floor(Math.random() * array3.length)];
-
-    result = random1 + " " + random2 + " " + random3;
-}
-
 
 
 /* Générateur View */
