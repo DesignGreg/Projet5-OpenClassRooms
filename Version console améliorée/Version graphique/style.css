@@ -1,0 +1,83 @@
+@media screen and (max-width: 800px) {
+    .video__background {
+        display: none;
+    }
+    body {
+        background-image: url(Videos/Space.jpg);
+    }
+}
+
+@media screen and (max-width: 1366px) {
+    .main {
+        flex-direction: column;
+        flex-wrap: wrap;
+        margin-top: 5vh !important;
+    }
+}
+
+.video__background {
+    position: fixed;
+    left: 0;
+    top: 0;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: -100;
+}
+
+.main {
+    display: flex;
+    flex-wrap: wrap;
+    width: 50%;
+    position: relative;
+    margin: 0 auto;
+    margin-top: 35vh;
+/*    transform: translateY(30%);*/
+}
+
+.main__titre, .main__choix, .main__resultats {
+    flex: auto;
+    text-align: center;
+}
+
+.main__titre {
+    color: white;
+    text-shadow: 2px 2px 2px black;
+    margin-bottom: 10px;
+}
+
+.main__choix {
+    margin-top: 20px;
+}
+
+.button {
+    background-color: black;
+    border: none;
+    border-radius: 10px;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    outline: none;
+    padding: 6px;
+}
+
+.button:checked, .button:active {
+    border: 1px solid white;
+}
+
+.main__resultats {
+    margin-top: 50px;
+    color: white;
+    text-shadow: 2px 2px 2px purple;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.main__select {
+    background-color: black;
+    color: white;
+    border: 1px solid white;
+    outline: none;
+    border-radius: 2px;
+}
